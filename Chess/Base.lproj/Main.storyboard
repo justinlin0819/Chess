@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,584 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Chess" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="棋盤" translatesAutoresizingMaskIntoConstraints="NO" id="4Mh-Aj-4Bg">
+                                <rect key="frame" x="0.0" y="137" width="375" height="393"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7J-H2-KGv">
+                                <rect key="frame" x="8" y="473" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-rook"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8qH-Rp-moh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiy-K3-YrM">
+                                <rect key="frame" x="8" y="427" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NIX-mm-zgi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLm-V3-TQ6">
+                                <rect key="frame" x="8" y="380" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0RD-W0-U9Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuz-Gt-Vey">
+                                <rect key="frame" x="8" y="334" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="apy-1k-KRV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR3-rl-qxV">
+                                <rect key="frame" x="8" y="287" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wzY-7I-GJ1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfm-K7-Doy">
+                                <rect key="frame" x="8" y="241" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EK1-0C-9FK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZc-BU-9Tc">
+                                <rect key="frame" x="8" y="194" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eCY-av-K4d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USN-IZ-8Bf">
+                                <rect key="frame" x="8" y="148" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-rook"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hEi-6Q-AzI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuS-tM-oQC">
+                                <rect key="frame" x="53" y="426" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qpy-F8-jSl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBW-Lf-W5M">
+                                <rect key="frame" x="53" y="380" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wjB-OD-N3q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKi-Ed-5XI">
+                                <rect key="frame" x="53" y="334" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cuD-5b-oML"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avQ-Xa-Y5U">
+                                <rect key="frame" x="53" y="287" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bpB-ef-4gY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR6-ro-JBI">
+                                <rect key="frame" x="53" y="241" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bnY-bR-r04"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucb-y4-Qno">
+                                <rect key="frame" x="53" y="194" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zcj-Sj-K53"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ac9-QW-nyT">
+                                <rect key="frame" x="53" y="148" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-knight"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0yq-Lr-XTg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvq-mQ-ZW0">
+                                <rect key="frame" x="53" y="473" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-knight"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CCU-7I-9pc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipX-HJ-4mW">
+                                <rect key="frame" x="98" y="473" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-bishop"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SZ9-7L-EKj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1f-G9-2cQ">
+                                <rect key="frame" x="98" y="427" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5X2-t0-Aqc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eW4-CE-qkx">
+                                <rect key="frame" x="97" y="380" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AoX-K9-9r7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqN-rW-XDi">
+                                <rect key="frame" x="98" y="333" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QGd-Fm-bTB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1o-MK-0yG">
+                                <rect key="frame" x="97" y="287" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YC4-BT-FAL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGQ-ut-rQh">
+                                <rect key="frame" x="98" y="240" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mOi-3Z-Ugz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0J-Z2-YiV">
+                                <rect key="frame" x="97" y="194" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="An9-eK-xHc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDF-cj-Mdp">
+                                <rect key="frame" x="98" y="147" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-bishop"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BNJ-BN-h7u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jeo-s0-Y5R">
+                                <rect key="frame" x="143" y="472" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-queen"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v7S-8F-6ZZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtc-jc-QyP">
+                                <rect key="frame" x="142" y="426" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eK1-zA-yBp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXc-Fm-Ig4">
+                                <rect key="frame" x="143" y="380" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oB1-Bw-Esp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNv-rO-h96">
+                                <rect key="frame" x="143" y="334" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o8U-C4-5kt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8L8-oh-D9F">
+                                <rect key="frame" x="143" y="287" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qEb-SZ-HGu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0Z-0P-zYC">
+                                <rect key="frame" x="143" y="241" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rvl-z4-Xga"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpm-1J-o6h">
+                                <rect key="frame" x="143" y="194" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QJ3-9w-NhP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOo-LK-AN5">
+                                <rect key="frame" x="143" y="148" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-queen"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zZa-Zt-r9x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgu-1n-R0w">
+                                <rect key="frame" x="188" y="473" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-king"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xap-I2-Ovo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmg-Yx-4IW">
+                                <rect key="frame" x="187" y="427" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qgW-ch-Ine"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efk-64-2FF">
+                                <rect key="frame" x="188" y="380" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ubN-E9-Xri"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vO5-Q6-I5u">
+                                <rect key="frame" x="187" y="333" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V0x-t0-0hz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDr-xI-gzm">
+                                <rect key="frame" x="188" y="287" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z1o-VN-zEa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1C0-xn-L7H">
+                                <rect key="frame" x="187" y="240" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g3h-DL-4rZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYl-wm-Q2H">
+                                <rect key="frame" x="188" y="194" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vrS-h2-3vL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eN-Yb-758">
+                                <rect key="frame" x="187" y="147" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-king"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c5w-ns-wca"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7E-QY-uAX">
+                                <rect key="frame" x="232" y="473" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-bishop"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fBZ-Gr-Rph"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2y-CA-IEv">
+                                <rect key="frame" x="232" y="426" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0zz-Ik-Vcv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKr-el-Z0x">
+                                <rect key="frame" x="232" y="380" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Mi-LW-Mz3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CnN-Dv-FGg">
+                                <rect key="frame" x="232" y="334" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Wu-yn-vqk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMd-QP-7CZ">
+                                <rect key="frame" x="232" y="287" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xWh-46-Xgm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axv-DP-sW0">
+                                <rect key="frame" x="232" y="241" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UVP-Bp-ndr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJY-Yw-aDf">
+                                <rect key="frame" x="232" y="194" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ov6-6s-ELQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wK-Fv-jvq">
+                                <rect key="frame" x="232" y="148" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-bishop"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WTg-SK-mnu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eb-da-OVP">
+                                <rect key="frame" x="277" y="473" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-knight"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yih-j1-om4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68g-3S-U9t">
+                                <rect key="frame" x="277" y="426" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ko-6A-qwJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNO-dz-5XU">
+                                <rect key="frame" x="277" y="380" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tiS-mW-uIh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccd-im-pRE">
+                                <rect key="frame" x="277" y="333" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gAf-wd-cmj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXk-IE-qB7">
+                                <rect key="frame" x="277" y="287" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zmm-bW-h3b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aI-ku-3m9">
+                                <rect key="frame" x="277" y="241" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zUo-Ir-ZEK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hip-4H-Cwj">
+                                <rect key="frame" x="277" y="194" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ocl-rG-kCZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F14-Ij-ZUs">
+                                <rect key="frame" x="277" y="148" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-knight"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VLl-Sa-mQv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41s-Y2-r9F">
+                                <rect key="frame" x="322" y="427" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rxH-5Z-P13"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5j-DX-LLN">
+                                <rect key="frame" x="322" y="380" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4NK-Rb-RTY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQN-VZ-OhH">
+                                <rect key="frame" x="322" y="333" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TCo-o9-xbm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dkb-DJ-6aS">
+                                <rect key="frame" x="322" y="287" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Ao-Sc-yoi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdZ-C6-T81">
+                                <rect key="frame" x="322" y="240" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HsA-zE-z5c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4S-gh-CrE">
+                                <rect key="frame" x="322" y="194" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-pawn"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NhA-cf-TQx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zZ-Pe-m1L">
+                                <rect key="frame" x="322" y="148" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="b-rook"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ytu-J4-nKH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smw-q5-Vek">
+                                <rect key="frame" x="322" y="473" width="45" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="w-rook"/>
+                                <connections>
+                                    <action selector="Grid_Selection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yyx-Vq-sSX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outletCollection property="Grid" destination="w7J-H2-KGv" collectionClass="NSMutableArray" id="9LT-ap-T8f"/>
+                        <outletCollection property="Grid" destination="fiy-K3-YrM" collectionClass="NSMutableArray" id="u4a-pJ-neQ"/>
+                        <outletCollection property="Grid" destination="aLm-V3-TQ6" collectionClass="NSMutableArray" id="SLw-kp-qTA"/>
+                        <outletCollection property="Grid" destination="tuz-Gt-Vey" collectionClass="NSMutableArray" id="plT-71-VGp"/>
+                        <outletCollection property="Grid" destination="KR3-rl-qxV" collectionClass="NSMutableArray" id="vsx-Og-uve"/>
+                        <outletCollection property="Grid" destination="yfm-K7-Doy" collectionClass="NSMutableArray" id="tdw-q8-Wbs"/>
+                        <outletCollection property="Grid" destination="fZc-BU-9Tc" collectionClass="NSMutableArray" id="QDy-C9-6cl"/>
+                        <outletCollection property="Grid" destination="USN-IZ-8Bf" collectionClass="NSMutableArray" id="hTp-xB-aHu"/>
+                        <outletCollection property="Grid" destination="rvq-mQ-ZW0" collectionClass="NSMutableArray" id="6sf-dh-4ka"/>
+                        <outletCollection property="Grid" destination="GuS-tM-oQC" collectionClass="NSMutableArray" id="q82-N3-Jae"/>
+                        <outletCollection property="Grid" destination="EBW-Lf-W5M" collectionClass="NSMutableArray" id="uWa-0N-TY6"/>
+                        <outletCollection property="Grid" destination="dKi-Ed-5XI" collectionClass="NSMutableArray" id="D1K-Pu-ddg"/>
+                        <outletCollection property="Grid" destination="avQ-Xa-Y5U" collectionClass="NSMutableArray" id="Mk3-dQ-WaK"/>
+                        <outletCollection property="Grid" destination="gR6-ro-JBI" collectionClass="NSMutableArray" id="cAZ-SC-fkT"/>
+                        <outletCollection property="Grid" destination="ucb-y4-Qno" collectionClass="NSMutableArray" id="sL9-Vw-Vtt"/>
+                        <outletCollection property="Grid" destination="ac9-QW-nyT" collectionClass="NSMutableArray" id="xlX-Tw-2Wf"/>
+                        <outletCollection property="Grid" destination="ipX-HJ-4mW" collectionClass="NSMutableArray" id="vCY-ku-GRQ"/>
+                        <outletCollection property="Grid" destination="R1f-G9-2cQ" collectionClass="NSMutableArray" id="JYy-ay-NCf"/>
+                        <outletCollection property="Grid" destination="eW4-CE-qkx" collectionClass="NSMutableArray" id="ggk-Di-13L"/>
+                        <outletCollection property="Grid" destination="YqN-rW-XDi" collectionClass="NSMutableArray" id="SGU-s2-Z9i"/>
+                        <outletCollection property="Grid" destination="t1o-MK-0yG" collectionClass="NSMutableArray" id="qeT-6l-Vmv"/>
+                        <outletCollection property="Grid" destination="RGQ-ut-rQh" collectionClass="NSMutableArray" id="oRt-8z-5DK"/>
+                        <outletCollection property="Grid" destination="P0J-Z2-YiV" collectionClass="NSMutableArray" id="ecW-E4-4AW"/>
+                        <outletCollection property="Grid" destination="kDF-cj-Mdp" collectionClass="NSMutableArray" id="fPj-iW-I6A"/>
+                        <outletCollection property="Grid" destination="Jeo-s0-Y5R" collectionClass="NSMutableArray" id="HXq-R1-xhi"/>
+                        <outletCollection property="Grid" destination="wtc-jc-QyP" collectionClass="NSMutableArray" id="Jat-KC-DdG"/>
+                        <outletCollection property="Grid" destination="cXc-Fm-Ig4" collectionClass="NSMutableArray" id="lPV-Xf-cIw"/>
+                        <outletCollection property="Grid" destination="cNv-rO-h96" collectionClass="NSMutableArray" id="Hof-w8-MeT"/>
+                        <outletCollection property="Grid" destination="8L8-oh-D9F" collectionClass="NSMutableArray" id="931-4O-4Hg"/>
+                        <outletCollection property="Grid" destination="R0Z-0P-zYC" collectionClass="NSMutableArray" id="o3l-7d-daI"/>
+                        <outletCollection property="Grid" destination="Hpm-1J-o6h" collectionClass="NSMutableArray" id="jSs-ve-paJ"/>
+                        <outletCollection property="Grid" destination="zOo-LK-AN5" collectionClass="NSMutableArray" id="l7R-I8-Txr"/>
+                        <outletCollection property="Grid" destination="Xgu-1n-R0w" collectionClass="NSMutableArray" id="F8f-FQ-QCf"/>
+                        <outletCollection property="Grid" destination="Fmg-Yx-4IW" collectionClass="NSMutableArray" id="sYb-m1-m2o"/>
+                        <outletCollection property="Grid" destination="efk-64-2FF" collectionClass="NSMutableArray" id="3Si-B0-OzS"/>
+                        <outletCollection property="Grid" destination="vO5-Q6-I5u" collectionClass="NSMutableArray" id="eKj-4n-MyE"/>
+                        <outletCollection property="Grid" destination="tDr-xI-gzm" collectionClass="NSMutableArray" id="LXG-IB-UOe"/>
+                        <outletCollection property="Grid" destination="1C0-xn-L7H" collectionClass="NSMutableArray" id="XIx-Lu-b44"/>
+                        <outletCollection property="Grid" destination="YYl-wm-Q2H" collectionClass="NSMutableArray" id="5qv-gi-CHo"/>
+                        <outletCollection property="Grid" destination="3eN-Yb-758" collectionClass="NSMutableArray" id="dx6-EH-dBI"/>
+                        <outletCollection property="Grid" destination="N7E-QY-uAX" collectionClass="NSMutableArray" id="Bk5-v4-nfM"/>
+                        <outletCollection property="Grid" destination="R2y-CA-IEv" collectionClass="NSMutableArray" id="JNv-5S-mZT"/>
+                        <outletCollection property="Grid" destination="rKr-el-Z0x" collectionClass="NSMutableArray" id="WJP-K4-5pz"/>
+                        <outletCollection property="Grid" destination="CnN-Dv-FGg" collectionClass="NSMutableArray" id="swz-Le-wCt"/>
+                        <outletCollection property="Grid" destination="UMd-QP-7CZ" collectionClass="NSMutableArray" id="D3j-gi-iVv"/>
+                        <outletCollection property="Grid" destination="Axv-DP-sW0" collectionClass="NSMutableArray" id="A07-v4-TaQ"/>
+                        <outletCollection property="Grid" destination="FJY-Yw-aDf" collectionClass="NSMutableArray" id="5Kv-Tl-N9F"/>
+                        <outletCollection property="Grid" destination="4wK-Fv-jvq" collectionClass="NSMutableArray" id="X0H-fu-3So"/>
+                        <outletCollection property="Grid" destination="6eb-da-OVP" collectionClass="NSMutableArray" id="rnj-PK-HmC"/>
+                        <outletCollection property="Grid" destination="68g-3S-U9t" collectionClass="NSMutableArray" id="P9g-mf-dd5"/>
+                        <outletCollection property="Grid" destination="wNO-dz-5XU" collectionClass="NSMutableArray" id="RyO-y3-aRb"/>
+                        <outletCollection property="Grid" destination="Ccd-im-pRE" collectionClass="NSMutableArray" id="9yL-LB-o6n"/>
+                        <outletCollection property="Grid" destination="VXk-IE-qB7" collectionClass="NSMutableArray" id="FNc-58-VCQ"/>
+                        <outletCollection property="Grid" destination="9aI-ku-3m9" collectionClass="NSMutableArray" id="efW-jC-Jhc"/>
+                        <outletCollection property="Grid" destination="Hip-4H-Cwj" collectionClass="NSMutableArray" id="Jih-T0-M6Q"/>
+                        <outletCollection property="Grid" destination="F14-Ij-ZUs" collectionClass="NSMutableArray" id="nsD-SY-1fr"/>
+                        <outletCollection property="Grid" destination="smw-q5-Vek" collectionClass="NSMutableArray" id="o6T-De-pYA"/>
+                        <outletCollection property="Grid" destination="41s-Y2-r9F" collectionClass="NSMutableArray" id="FnG-4i-bCu"/>
+                        <outletCollection property="Grid" destination="i5j-DX-LLN" collectionClass="NSMutableArray" id="o8e-gj-gSA"/>
+                        <outletCollection property="Grid" destination="NQN-VZ-OhH" collectionClass="NSMutableArray" id="Fy8-fT-3CS"/>
+                        <outletCollection property="Grid" destination="Dkb-DJ-6aS" collectionClass="NSMutableArray" id="V74-jn-d7u"/>
+                        <outletCollection property="Grid" destination="ZdZ-C6-T81" collectionClass="NSMutableArray" id="MXu-bJ-PhE"/>
+                        <outletCollection property="Grid" destination="w4S-gh-CrE" collectionClass="NSMutableArray" id="8lA-LU-XBn"/>
+                        <outletCollection property="Grid" destination="2zZ-Pe-m1L" collectionClass="NSMutableArray" id="QW3-H1-FMo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="b-bishop" width="43" height="44"/>
+        <image name="b-king" width="46" height="45"/>
+        <image name="b-knight" width="41" height="42"/>
+        <image name="b-pawn" width="45" height="45"/>
+        <image name="b-queen" width="43" height="46"/>
+        <image name="b-rook" width="40" height="43"/>
+        <image name="w-bishop" width="42" height="42"/>
+        <image name="w-king" width="45" height="46"/>
+        <image name="w-knight" width="40" height="42"/>
+        <image name="w-pawn" width="40" height="41"/>
+        <image name="w-queen" width="45" height="46"/>
+        <image name="w-rook" width="32" height="39"/>
+        <image name="棋盤" width="323" height="327"/>
+    </resources>
 </document>
